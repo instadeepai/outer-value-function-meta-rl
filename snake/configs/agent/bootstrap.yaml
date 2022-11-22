@@ -1,0 +1,22 @@
+name: bootstrap
+agent: meta_a2c
+meta_objective: bootstrap
+gamma_metal: true
+lambda_metal: false
+l_pg_metal: false
+l_td_metal: false
+l_en_metal: false
+gamma_outer: 1.0
+lambda_outer: 1.0
+l_pg_outer: 1.0
+l_td_outer: 0
+l_en_outer: 0
+l_kl_outer: 0
+bootstrap_l: 1
+bootstrap_pm: 1
+bootstrap_vm: 0.0
+meta_optimizer: adam  # [sgd, rmsprop, adam]
+meta_learning_rate: 6e-3
+meta_gradient_clip_norm: 0.1  # [null, <float>]
+bootstrap_l_optimizer: rmsprop
+bootstrap_l_learning_rate: ${training.learning_rate}

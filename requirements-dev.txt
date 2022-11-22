@@ -1,0 +1,15 @@
+# All of these dependencies are pinned to specific versions to achieve reproducible builds (CI/Dev)
+black==22.10.0
+coverage==6.4.4
+flake8==5.0.4
+isort==5.10.1
+mypy==0.971
+pre-commit==2.20.0
+promise==2.3
+pytest==7.1.3
+pytest-cov==3.0.0
+pytest-mock==3.8.2
+pytest-parallel==0.1.1
+pytest-xdist==2.5.0
+pytype==2022.9.8
+testfixtures==7.0.0

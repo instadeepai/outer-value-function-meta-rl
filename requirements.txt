@@ -1,0 +1,17 @@
+chex==0.1.5
+distrax==0.1.2
+dm-haiku==0.0.7
+gymnax==0.0.5
+hydra-core==1.2.0
+jax==0.3.22
+jaxlib==0.3.22
+jumanji==0.1.3
+jupyter==1.0.0
+matplotlib==3.6.2
+neptune-client==0.16.7
+numpy==1.22.4
+omegaconf==2.2.3
+optax==0.1.3
+rlax==0.1.4
+scipy==1.9.1
+tqdm==4.64.1

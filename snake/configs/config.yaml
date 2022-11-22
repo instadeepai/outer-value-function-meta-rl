@@ -1,0 +1,39 @@
+defaults:
+    - agent: mgrl  # [a2c, mgrl, bootstrap]
+    - _self_
+
+training:
+    name: appendix_norm_advantages_snake_${agent.name}_outer_critic_${agent.outer_critic}_normalize_advantage_${agent.normalize_advantage}_normalize_outer_advantage_${agent.normalize_outer_advantage}
+    num_timesteps: 75_000_000
+    num_eval_points: 200
+    total_batch_size: 512
+    total_num_envs: 512
+    n_steps: 5
+    reward_scaling: 1
+    optimizer: rmsprop  # [sgd, rmsprop, adam]
+    learning_rate: 5e-4
+    gradient_clip_norm: null  # [null, <float>]
+    gamma_init: 0.8
+    lambda_init: 0.95
+    l_pg_init: 1.0
+    l_td_init: 0.5
+    l_en_init: 1e-2
+    seed: 1
+
+
+agent:
+    # Common to all agents
+    outer_critic: false  # [true, false]
+    normalize_advantage: false  # [true, false]
+    normalize_outer_advantage: false  # [true, false]
+    total_num_eval: 512
+    deterministic_eval: false  # Does not matter since now returns both metrics (determinist and stochastic)
+
+network:
+    # Overwrite
+    type: snake
+    num_channels: 32
+    policy_layers: [64, 64]  # Tuned to [64, 64] out of [[64, 64], [32, 32]]
+    value_layers: [128, 128]
+    embedding_size_actor: null  # [<integer>, null]
+    embedding_size_critic: null  # [<integer>, null]
